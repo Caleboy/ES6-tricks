@@ -18,9 +18,9 @@ arr.reduce(function func(a,b){return a+b;}); // 10
 ```html
 1.如memo不为undefined,把memo和arr[index]作为参数调用func
 2.如memo为undefined,把arr[index]和arr[index+1]作为参数调用func.
-2.func返回的结果赋值给memo.
-3.index += 1
-3.重复第1和第2步直至所有数据都处理完毕,返回memo.
+3.func返回的结果赋值给memo.
+4.index += 1
+5.重复第1和第2步直至所有数据都处理完毕,返回memo.
 ```
 
 reduce函数传入到处理函数的参数有4个:(arr[index],arr[index+1],index,arr).
