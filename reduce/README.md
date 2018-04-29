@@ -2,6 +2,29 @@
 
 数组的reduce方法用途很广。它一般被用来把数组中每一项规约到单个值。但是你可以利用它做更多的事。
 
+## reduce
+
+reduce()函数用于把数组或对象归结为一个值,并返回这个值,使用方法为arr.reduct(func,memo),其中func为处理函数,memo为初始值,初始值可缺省.
+
+示例:
+
+```js
+var arr = [1,2,3,4];
+arr.reduce(function func(a,b){return a+b;}); // 10
+```
+
+根据我的理解,计算的顺序应该为:
+
+```html
+1.如memo不为undefined,把memo和arr[index]作为参数调用func
+2.如memo为undefined,把arr[index]和arr[index+1]作为参数调用func.
+2.func返回的结果赋值给memo.
+3.index += 1
+3.重复第1和第2步直至所有数据都处理完毕,返回memo.
+```
+
+reduce函数传入到处理函数的参数有4个:(arr[index],arr[index+1],index,arr).
+
 ## 使用reduce同时实现map和filter
 
 假设现在有一个数列，你希望更新它的每一项（map的功能）然后筛选出一部分（filter的功能）。如果是先使用map然后filter的话，你需要遍历这个数组两次。
